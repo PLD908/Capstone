@@ -176,11 +176,63 @@ button{
 .border{
     display: flex;
     justify-content: space-between;
-    margin-top: 120px;
+    margin-top: 40px;
 }
 .bord{
     position: relative;
     background-color: rgba(238, 233, 233, 0.854);
+    width: 49px;
+    height: 125px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.colo0{
+    position: absolute;
+    background-color: #579AFF;
+    width: 40px;
+    height: 43px;
+    border-radius: 5px;
+    margin-top: 42px;
+}
+.colo1{
+    position: absolute;
+    background-color: #DB48FF;
+    width: 40px;
+    height: 67px;
+    border-radius: 5px;
+    margin-top: 18px;
+}
+.colo2{
+    position: absolute;
+    background-color: #8146FF;
+    width: 40px;
+    height: 97px;
+    border-radius: 5px;
+    margin-top: -12px;
+}
+.colo3{
+    position: absolute;
+    background-color: #ff447c;
+    width: 40px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 34px;
+}
+.colo4{
+    position: absolute;
+    background-color: #4cb050;
+    width: 40px;
+    height: 69px;
+    border-radius: 5px;
+    margin-top: 16px;
+}
+.colo5{
+    position: absolute;
+    background-color: #ff805d;
+    width: 40px;
+    height: 90px;
+    border-radius: 5px;
+    margin-top: -5px;
 }
 .table{
     background-color: white;
