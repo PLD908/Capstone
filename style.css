@@ -8,7 +8,7 @@ body{
     margin: 0;
     font-family: 'Inter', sans-serif;
     overflow-x: none;
-    /* height: 100vh; */
+    height: 100vh;
 }
 .grid{
     display: grid;
@@ -306,4 +306,20 @@ th{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .grid{
+        display: none;
+    }
+    nav{
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        left: 260px;
+        height: 76px;
+        width: 600px;
+    }
 }
