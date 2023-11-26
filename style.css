@@ -158,8 +158,8 @@ button{
 .CND{
     margin-top: 40px;
 }
-.floatRight{
-    margin-right: -980px;
+ul p{
+    margin-right: 150px;
 }
 .main2{
     background-color: white;
@@ -167,8 +167,9 @@ button{
     width: 655px;
     height: 299px;
     margin: 35px;
-    padding: 40px;
+    padding: 0 40px;
     border-radius: 19px;
+    padding-left: -50px;
 }
 .floatt{
     float: right;
@@ -176,7 +177,9 @@ button{
 .border{
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 70px;
+    margin-left: 30px;
+    gap: 25px;
 }
 .bord{
     position: relative;
@@ -192,7 +195,7 @@ button{
     width: 40px;
     height: 43px;
     border-radius: 5px;
-    margin-top: 42px;
+    margin-top: 78px;
 }
 .colo1{
     position: absolute;
@@ -200,7 +203,7 @@ button{
     width: 40px;
     height: 67px;
     border-radius: 5px;
-    margin-top: 18px;
+    margin-top: 53px;
 }
 .colo2{
     position: absolute;
@@ -208,7 +211,7 @@ button{
     width: 40px;
     height: 97px;
     border-radius: 5px;
-    margin-top: -12px;
+    margin-top: 24px;
 }
 .colo3{
     position: absolute;
@@ -216,7 +219,7 @@ button{
     width: 40px;
     height: 50px;
     border-radius: 5px;
-    margin-top: 34px;
+    margin-top: 72px;
 }
 .colo4{
     position: absolute;
@@ -224,7 +227,7 @@ button{
     width: 40px;
     height: 69px;
     border-radius: 5px;
-    margin-top: 16px;
+    margin-top: 52px;
 }
 .colo5{
     position: absolute;
@@ -232,12 +235,75 @@ button{
     width: 40px;
     height: 90px;
     border-radius: 5px;
-    margin-top: -5px;
+    margin-top: 32px;
+}
+.swift0{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 50px;
+}
+.swift1{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+.swift2{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+.swift3{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 50px;
+}
+.swift4{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 25px;
+}
+.swift5{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 10px;
 }
 .table{
     background-color: white;
     grid-column: 2 / span 2;
     width: 1160px;
-    height: 517px;
+    height: 540px;
     margin: 35px;
+    padding: 0 40px;
+}
+td{
+    border-bottom: 1px solid rgba(238, 233, 233, 0.854);
+    text-align: center;
+}
+td p{
+    background-color: rgb(232, 255, 232);
+    color: rgb(18, 247, 26);
+    width: 80px;
+    padding: 15px;
+    border-radius: 9px;
+}
+th{
+    background-color: rgba(238, 233, 233, 0.854);
+    width: 1050px;
+    height: 60px;
+}
+.inactive{
+    background-color: rgb(255, 241, 241);
+    color: red;
+    width: 90px;
+    border-radius: 9px;
+}
+.dip{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
