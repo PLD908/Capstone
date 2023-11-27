@@ -88,6 +88,9 @@ button{
 .register1{
     display: none;
 }
+a{
+    text-decoration: none;
+}
 
 @media screen and (max-width: 800px) {
     body{

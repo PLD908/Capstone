@@ -9,6 +9,7 @@ body{
     font-family: 'Inter', sans-serif;
     overflow-x: none;
     height: 100vh;
+    font-size: 13px;
 }
 .grid{
     display: grid;
@@ -158,8 +159,15 @@ button{
 .CND{
     margin-top: 40px;
 }
+ul .floatRight1{
+    margin-right: 155px;
+}
+ul .floatRight2{
+    margin-right: 140px;
+}
 ul p{
     margin-right: 150px;
+    
 }
 .main2{
     background-color: white;
@@ -301,6 +309,7 @@ th{
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 22px;
 }
 .btn{
     display: flex;
