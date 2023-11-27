@@ -7,36 +7,49 @@ body{
     background-color: rgba(238, 233, 233, 0.854);
     margin: 0;
     font-family: 'Inter', sans-serif;
-    overflow-x: none;
-    height: 100vh;
-    font-size: 13px;
+    overflow-x: hidden;
+    height: 150vh;
+    font-size: 12px;
+    position: relative;
 }
 .grid{
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    gap: 5px;
+    gap: 20px;
 }
 .nav{
     background-color: white;
     grid-column: 2 / span 2;
     margin-left: -30px;
+    position: fixed;
+    z-index: 3;
+    width: 1160px;
+    margin-left: 220px;
 }
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
-    height: 90px;
-    width: 1250px;
+    padding: 25px;
+    height: 80px;
+    width: 1140px;
 }
 .notification{
     display: flex;
     gap: 9px;
+    align-items: center;
+}
+select{
+    border: none;
+    outline: none;
+}
+p select{
+    background-color: rgba(205, 224, 251, 0.753);
 }
 .img{
     position: relative;
-    margin-top: 13px;
+    margin-top: 10px;
 }
 .img1{
     border-radius: 50px;
@@ -64,9 +77,17 @@ input{
     background-color: white;
     grid-column: 1;
     grid-row: 1 / span 3;
-    padding: 30px;
-    width: 260px;
+    padding: 25px;
+    width: 230px;
     border-right: 1px solid rgba(238, 233, 233, 0.854);
+    position: fixed;
+    z-index: 3;
+}
+.menu li{
+    cursor: pointer;
+}
+ul img{
+    width: 15px;
 }
 .flex{
     margin-left: 30px;
@@ -80,21 +101,22 @@ li{
     display: flex;
     align-items: center;
     list-style-type: none;
-    margin-top: 20px;
     margin-left: -30px;
-    align-items: center;
     font-size: 13px;
+    gap: 2px;
 }
 button{
     border: none;
     border-radius: 8px;
     padding: 10px;
-    height: 44px;
-    width: 177px;
+    height: 40px;
+    font-size: 11px;
+    width: 150px;
     background-color: #8146FF;
     color: white;
-    margin: 20px;
-    margin-top: 40px;
+    margin: 15px;
+    margin-top: 5px;
+    cursor: pointer;
 }
 .color{
     background-color: rgba(238, 233, 233, 0.854);
@@ -107,22 +129,24 @@ button{
 .human{
     width: 187px;
     height: 126px;
-    margin-top: 130px;
 }
 .set{
     width: 91.46px;
     height: 20px;
     display: flex;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 10px;
+    margin-left: 25px;
+    cursor: pointer;
 }
 .main{
     background-color: white;
     grid-column: 2;
-    padding: 40px;
-    width: 425px;
-    height: 299px;
-    margin: 35px;
+    padding: 5px 20px;
+    width: 380px;
+    height: 210px;
+    margin-left: 65px;
+    margin-right: 20px;
     border-radius: 19px;
 }
 .float{
@@ -157,7 +181,7 @@ button{
     margin-right: 10px;
 }
 .CND{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 ul .floatRight1{
     margin-right: 155px;
@@ -167,81 +191,106 @@ ul .floatRight2{
 }
 ul p{
     margin-right: 150px;
-    
+}
+.allMain{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-left: 250px;
+}
+.all{
+    position: absolute;
+    flex-direction: column;
+    top: 120px;
 }
 .main2{
     background-color: white;
     grid-column: 3;
-    width: 655px;
-    height: 299px;
-    margin: 35px;
+    width: 520px;
+    height: 210px;
+    margin-left: 30px;
     padding: 0 40px;
     border-radius: 19px;
-    padding-left: -50px;
+    padding-left: -20px;
 }
 .floatt{
     float: right;
 }
 .border{
     display: flex;
-    justify-content: space-between;
-    margin-top: 70px;
-    margin-left: 30px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 7px;
     gap: 25px;
+    width: 100%;
+}
+.bords .moveLeft{
+    margin-left: -10px;
 }
 .bord{
     position: relative;
     background-color: rgba(238, 233, 233, 0.854);
-    width: 49px;
-    height: 125px;
+    width: 40px;
+    height: 115px;
     border-radius: 5px;
     padding-left: 5px;
+}
+.bord1{
+    position: relative;
+    background-color: rgba(238, 233, 233, 0.854);
+    width: 40px;
+    height: 115px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-left: -25px;
 }
 .colo0{
     position: absolute;
     background-color: #579AFF;
-    width: 40px;
-    height: 43px;
+    width: 31px;
+    height: 33px;
     border-radius: 5px;
     margin-top: 78px;
 }
 .colo1{
     position: absolute;
     background-color: #DB48FF;
-    width: 40px;
-    height: 67px;
+    width: 31px;
+    height: 57px;
     border-radius: 5px;
     margin-top: 53px;
 }
 .colo2{
     position: absolute;
     background-color: #8146FF;
-    width: 40px;
-    height: 97px;
+    width: 31px;
+    height: 87px;
     border-radius: 5px;
     margin-top: 24px;
 }
 .colo3{
     position: absolute;
     background-color: #ff447c;
-    width: 40px;
-    height: 50px;
+    width: 31px;
+    height: 40px;
     border-radius: 5px;
     margin-top: 72px;
 }
 .colo4{
     position: absolute;
     background-color: #4cb050;
-    width: 40px;
-    height: 69px;
+    width: 31px;
+    height: 59px;
     border-radius: 5px;
     margin-top: 52px;
 }
 .colo5{
     position: absolute;
     background-color: #ff805d;
-    width: 40px;
-    height: 90px;
+    width: 31px;
+    height: 80px;
     border-radius: 5px;
     margin-top: 32px;
 }
@@ -278,10 +327,13 @@ ul p{
 .table{
     background-color: white;
     grid-column: 2 / span 2;
-    width: 1160px;
-    height: 540px;
-    margin: 35px;
-    padding: 0 40px;
+    width: 950px;
+    height: 500px;
+    margin-left: 315px;
+    margin-top: 50px;
+    padding: 7px 20px;
+    border-radius: 30px;
+    display: block;
 }
 td{
     border-bottom: 1px solid rgba(238, 233, 233, 0.854);
@@ -291,19 +343,21 @@ td p{
     background-color: rgb(232, 255, 232);
     color: rgb(18, 247, 26);
     width: 80px;
-    padding: 15px;
+    padding: 13px;
     border-radius: 9px;
+    margin-left: 60px;
 }
 th{
     background-color: rgba(238, 233, 233, 0.854);
     width: 1050px;
-    height: 60px;
+    height: 40px;
 }
 .inactive{
     background-color: rgb(255, 241, 241);
     color: red;
     width: 90px;
     border-radius: 9px;
+    margin-left: 55px;
 }
 .dip{
     display: flex;
@@ -395,7 +449,8 @@ th{
         background-color: rgb(232, 255, 232);
         color: rgb(18, 247, 26);
         width: 80px;
-        padding: 15px;
+        padding: 13px;
+        padding-left: 22px;
         border-radius: 9px;
     }
 }

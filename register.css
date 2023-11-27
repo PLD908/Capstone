@@ -136,7 +136,7 @@ a{
     .number{
         height: 500px;
     }
-    .change input::placeholder{
+    /* .change input::placeholder{
             color: white;
-    }
+    } */
 }
