@@ -33,6 +33,7 @@ form{
     height: 470px; 
     margin: 60px auto;
     padding: 25px 70px;
+    border-radius: 25px;
 }
 input::placeholder{
     color: black;
@@ -101,7 +102,7 @@ a{
         width: 383px;
         height: 656px;
         padding: 20px;
-        border-radius: 18px;
+        border-radius: 20px;
     }
     form .input-box{
         flex-direction: column;
@@ -136,7 +137,4 @@ a{
     .number{
         height: 500px;
     }
-    /* .change input::placeholder{
-            color: white;
-    } */
 }

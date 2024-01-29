@@ -16,7 +16,6 @@ body{
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    gap: 5px;
 }
 .nav{
     background-color: white;
@@ -149,8 +148,7 @@ button{
     padding: 5px 20px;
     width: 380px;
     height: 210px;
-    margin-left: 65px;
-    margin-right: 20px;
+    margin-left: 40px;
     border-radius: 19px;
 }
 .float{
@@ -202,6 +200,7 @@ ul p{
     width: 100%;
     align-items: center;
     margin-left: 250px;
+    margin-top: 10px;
 }
 .all{
     position: absolute;
@@ -211,9 +210,9 @@ ul p{
 .main2{
     background-color: white;
     grid-column: 3;
-    width: 520px;
+    width: 560px;
     height: 210px;
-    margin-left: 30px;
+    margin-left: 60px;
     padding: 0 40px;
     border-radius: 19px;
     padding-left: -20px;
@@ -230,8 +229,8 @@ ul p{
     gap: 25px;
     width: 100%;
 }
-.bords .moveLeft{
-    margin-left: -5px;
+.moveLeft{
+    margin-left: -20px;
 }
 .bord{
     position: relative;
@@ -331,28 +330,33 @@ ul p{
 .table{
     background-color: white;
     grid-column: 2 / span 2;
-    width: 950px;
+    width: 1000px;
     height: 500px;
-    margin-left: 315px;
+    margin-left: 290px;
     margin-top: 50px;
     padding: 7px 20px;
     border-radius: 30px;
     display: block;
+}
+table{
+    border-collapse: collapse;
 }
 td{
     border-bottom: 1px solid rgba(238, 233, 233, 0.854);
     text-align: center;
 }
 td p{
-    background-color: rgb(232, 255, 232);
+    background-color: rgb(242, 249, 242);
     color: rgb(18, 247, 26);
     width: 80px;
     padding: 13px;
     border-radius: 9px;
     margin-left: 60px;
 }
-th{
+.thead{
     background-color: rgba(238, 233, 233, 0.854);
+}
+th{
     width: 1050px;
     height: 40px;
 }
@@ -431,8 +435,8 @@ th{
         padding: 10px;
         border-radius: 8px;
     }
-    h3{
-        margin: 45px;
+    h3, select{
+        margin: 40px;
     }
     .name{
         display: flex;
@@ -443,6 +447,7 @@ th{
         width: 495px;
         height: 95px;
         padding: 30px;
+        border-radius: 20px;
     }
     .nic{
         display: flex;
@@ -457,7 +462,7 @@ th{
         display: block;
     }
     .active{
-        background-color: rgb(232, 255, 232);
+        background-color: rgb(242, 251, 242);
         color: rgb(18, 247, 26);
         width: 80px;
         padding: 13px;
