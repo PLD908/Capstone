@@ -80,58 +80,72 @@ fetch("https://dummyjson.com/users")
         .catch((error) => console.error("DELETE ERROR:", error));
     };
 
+    let showAlert = true; // Add this variable to control when the alert should be shown
+
     // Assume you have a button with an id="addRowButton"
-const addRowButton = document.getElementById('addRowButton');
-
-// Add an event listener to the button
-addRowButton.addEventListener('click', () => {
-    // Get the data for the new row (you might fetch it from an API or have it predefined)
-    function addRow(data) {
-        const randomNumber = Math.floor(Math.random() * data.length);
-        const newUser = data[randomNumber]; // Assuming data is an array of users
-        const newRowData = {
-            id: newUser.id,
-            company: {
-                department: newUser.company.department,
-            },
-            image: newUser.image,
-            firstName: newUser.firstName,
-            gender: newUser.gender,
-            // ... other properties
-        };
-
+    const addRowButton = document.getElementById('addRowButton');
     
-        // Call a function to dynamically add the new row to the table
-        addTableRow(newRowData);
+    // Add an event listener to the button
+    addRowButton.addEventListener('click', () => {
+        // Check if the alert should be shown
+        if (showAlert) {
+            alert("The department is full...");
+            showAlert = false; // Set showAlert to false so the alert won't be shown again
+        }
+    
+        // Fetch data and add a row
+        fetch("https://dummyjson.com/users")
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("NETWORK RESPONSE ERROR");
+                }
+            })
+            .then((data) => {
+                addRow(data);
+            })
+            .catch((error) => console.error("FETCH ERROR:", error));
+    });
+    
+    function addRow(data) {
+        // Check if there are users in the fetched data
+        if (data.users && data.users.length > 0) {
+            // Get the table container and the table itself
+            const tableContainer = document.querySelector(".table-container");
+            const table = tableContainer.querySelector('table');
+    
+            // Check the current number of rows in the table
+            const currentRowCount = table.getElementsByTagName('tr').length;
+    
+            // Only add a new row if the current count is less than 5
+            if (currentRowCount <= 5) {
+                // Generate a random index to get a random user from the array
+                const randomNumber = Math.floor(Math.random() * data.users.length);
+                const newUser = data.users[randomNumber];
+    
+                // Create a new table row
+                const row = document.createElement('tr');
+                // Set the data-id attribute with the user ID
+                row.setAttribute('data-id', newUser.id);
+    
+                // Populate the row with data
+                row.innerHTML = `
+                    <td>${newUser.company.department}</td>
+                    <td class="dip"><img src=${newUser.image} alt="A guy"> ${newUser.firstName}</td>
+                    <td>${newUser.gender}</td>
+                    <td>${newUser.company.title}</td>
+                    <td>
+                        <img src="images/pen.png" alt="edit">
+                        <img src="images/icon.png" alt="icon">
+                        <img src="images/delete.png" alt="delete" onclick="deleteRow(this)">
+                    </td>
+                    <td><p>Active</p></td>
+                `;
+    
+                // Append the new row to the table
+                table.appendChild(row);
+            }
+        }
     }
-
-    addRow(data);
-});
-
-function addTableRow(data) {
-    const tableContainer = document.querySelector(".table-container");
-    const table = tableContainer.querySelector('table');
-
-    // Create a new table row
-    const row = document.createElement('tr');
-    // Set the data-id attribute with the user ID
-    row.setAttribute('data-id', data.id);
-
-    // Populate the row with data (similar to what you did in displayDoctor)
-    row.innerHTML = `
-        <td>${data.company.department}</td>
-        <td class="dip"><img src=${data.image} alt="A guy"> ${data.firstName}</td>
-        <td>${data.gender}</td>
-        <td>${data.company.title}</td>
-        <td>
-            <img src="images/pen.png" alt="edit">
-            <img src="images/icon.png" alt="icon">
-            <img src="images/delete.png" alt="delete"  onclick="deleteRow(this)">
-        </td>
-        <td><p>Active</p></td>
-    `;
-
-    // Append the new row to the table
-    table.appendChild(row);
-}
-
+    
