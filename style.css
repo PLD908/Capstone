@@ -388,6 +388,9 @@ th{
 .showPage{
     display: none;
 }
+td img{
+    cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
     .showPage{
