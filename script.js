@@ -80,19 +80,11 @@ fetch("https://dummyjson.com/users")
         .catch((error) => console.error("DELETE ERROR:", error));
     };
 
-    let showAlert = true; // Add this variable to control when the alert should be shown
-
     // Assume you have a button with an id="addRowButton"
     const addRowButton = document.getElementById('addRowButton');
     
     // Add an event listener to the button
     addRowButton.addEventListener('click', () => {
-        // Check if the alert should be shown
-        if (showAlert) {
-            alert("The department is full...");
-            showAlert = false; // Set showAlert to false so the alert won't be shown again
-        }
-    
         // Fetch data and add a row
         fetch("https://dummyjson.com/users")
             .then((response) => {
@@ -147,5 +139,4 @@ fetch("https://dummyjson.com/users")
                 table.appendChild(row);
             }
         }
-    }
-    
+    };
