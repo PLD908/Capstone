@@ -1,19 +1,22 @@
-fetch("https://dummyjson.com/users")
-    .then((response) => {
-        if (response.ok) {
-            let res = response.json();
-            console.log(res);
-            return res;
-        } else {
-            throw new Error("NETWORK RESPONSE ERROR");
-        }
-    })
-    .then((data) => {
-        console.log(data);
-        displayDoctor(data);
-        addRow(data);
-    })
-    .catch((error) => console.error("FETCH ERROR:", error));
+setTimeout(() => {
+    fetch("https://dummyjson.com/users")
+        .then((response) => {
+            if (response.ok) {
+                let res = response.json();
+                console.log(res);
+                return res;
+            } else {
+                throw new Error("NETWORK RESPONSE ERROR");
+            }
+        })
+        .then((data) => {
+            console.log(data);
+            displayDoctor(data);
+            addRow(data);
+        })
+        .catch((error) => console.error("FETCH ERROR:", error));
+}, 1000)
+
 
     function displayDoctor(data) {
         const tableContainer = document.querySelector(".table-container");
@@ -51,7 +54,6 @@ fetch("https://dummyjson.com/users")
                 <td><p>Active</p></td>
             `;
             table.appendChild(row);
-            console.log(`This is the index of data: ${data.id}`)
         });
     
         // Append the table to the container
@@ -81,23 +83,61 @@ fetch("https://dummyjson.com/users")
     };
 
     // Assume you have a button with an id="addRowButton"
-    const addRowButton = document.getElementById('addRowButton');
     
+    const spinner = document.querySelector(".loader");
+    spinner.style.display = "none";
+    
+    window.onload = () => {
+        spinner.style.display = "block";
+        setTimeout(() => {
+            spinner.style.display = "none";
+        }, 1600);
+    };
+
+    const addRowButton = document.getElementById('addRowButton');
+
+    const loader = document.getElementById("spinner")
+        loader.style.display = "none";
+
+    let rowCount = 0;
+
     // Add an event listener to the button
     addRowButton.addEventListener('click', () => {
-        // Fetch data and add a row
-        fetch("https://dummyjson.com/users")
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error("NETWORK RESPONSE ERROR");
-                }
-            })
-            .then((data) => {
-                addRow(data);
-            })
-            .catch((error) => console.error("FETCH ERROR:", error));
+         // Increment the rowCount before making the fetch request
+    rowCount++;
+
+    // Check if the rowCount is greater than 5
+    if (rowCount < 5) {
+        loader.style.display = "block";
+
+        // Fetch data and add a row after a simulated delay (e.g., 10 seconds)
+        setTimeout(() => {
+            fetch("https://dummyjson.com/users")
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error("NETWORK RESPONSE ERROR");
+                    }
+                })
+                .then((data) => {
+                    // Add the row
+                    addRow(data);
+
+                    // Hide the spinner after adding the row
+                    loader.style.display = "none";
+                })
+                .catch((error) => {
+                    console.error("FETCH ERROR:", error);
+                    // Hide the spinner in case of an error
+                    loader.style.display = "none";
+                });
+        }, 800); // Simulated delay of 10 seconds
+    } else {
+        // Hide the spinner if rowCount is greater than 5
+        loader.style.display = "none";
+        alert('The department is full...')
+    }
     });
     
     function addRow(data) {
