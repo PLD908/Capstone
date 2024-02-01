@@ -99,19 +99,15 @@ setTimeout(() => {
     const loader = document.getElementById("spinner")
         loader.style.display = "none";
 
-    let rowCount = 0;
-
     // Add an event listener to the button
     addRowButton.addEventListener('click', () => {
-         // Increment the rowCount before making the fetch request
-    rowCount++;
+        const rowCount = document.querySelectorAll('tr').length;
 
-    // Check if the rowCount is greater than 5
-    if (rowCount < 5) {
-        loader.style.display = "block";
-
-        // Fetch data and add a row after a simulated delay (e.g., 10 seconds)
-        setTimeout(() => {
+        if (rowCount <= 5) {
+            // Increment the rowCount before making the fetch request
+            loader.style.display = "block";
+    
+            // Fetch data and add a row
             fetch("https://dummyjson.com/users")
                 .then((response) => {
                     if (response.ok) {
@@ -123,21 +119,19 @@ setTimeout(() => {
                 .then((data) => {
                     // Add the row
                     addRow(data);
-
-                    // Hide the spinner after adding the row
-                    loader.style.display = "none";
                 })
                 .catch((error) => {
                     console.error("FETCH ERROR:", error);
-                    // Hide the spinner in case of an error
+                })
+                .finally(() => {
+                    // Hide the spinner after adding the row or in case of an error
                     loader.style.display = "none";
                 });
-        }, 800); // Simulated delay of 10 seconds
-    } else {
-        // Hide the spinner if rowCount is greater than 5
-        loader.style.display = "none";
-        alert('The department is full...')
-    }
+        } else {
+            // Display an alert if rowCount is equal to or greater than 5
+            alert('The department is full...');
+            loader.style.display = "none";
+        }
     });
     
     function addRow(data) {
